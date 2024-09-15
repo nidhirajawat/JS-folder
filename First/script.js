@@ -1,4 +1,4 @@
-const basket1Count = document.querySelector(".basket-1 span");
+const firstBasket = document.querySelector(".basket-1 span");
 const secondBasket = document.querySelector(".basket-2 span");
 
 const leftArrow = document.querySelector(".arrow-1");
@@ -10,5 +10,22 @@ let firstBasketAppleCount = totalApples - secondBasketAppleCount;
 firstBasket.innerText = firstBasketAppleCount;
 secondBasket.innerText = firstBasketAppleCount;
 
-rightArrow.addEventListener("click", () => {});
-// basket1Count.innerText = totalApples;
+//rightAllow
+rightArrow.addEventListener("click", () => {
+  if (firstBasketAppleCount > 0) {
+    firstBasketAppleCount--;
+    firstBasket.innerText = firstBasketAppleCount;
+    secondBasketAppleCount++;
+    secondBasket.innerText = firstBasketAppleCount;
+  }
+});
+
+// leftBasket
+leftArrow.addEventListener("click", () => {
+  if (secondBasketAppleCount > 0) {
+    firstBasketAppleCount++;
+    firstBasket.innerText = firstBasketAppleCount;
+    secondBasketAppleCount--;
+    secondBasket.innerText = firstBasketAppleCount;
+  }
+});
