@@ -45,60 +45,22 @@ const resetInputValue = () => {
 function showListItems() {
   console.log('Page loaded.');
   // Array .map
+
+  // const numbers = [1, 2, 3, 4]; // Simple Array
+ 
+  // Updated new array
+  // const doubleNumbers = numbers.map((value) => `<li>${value * 2}</li>`);
+  // console.log('doubleNumbers', doubleNumbers)
+
   const listOfTask = localStorage.getItem("taskList");
   const existingList = JSON.parse(listOfTask)
+  const existingListHTML = existingList.map((item) => `<li>${item}</li>`);
 
- 
-  const itemsCount = existingList.length;
-
-  console.log('existingList', itemsCount, existingList);
-
- // Basic Listing Array to HTML list (For Loop)
-  // let listItemHtml = "";
-  // for (let i = 0; i < itemsCount; i++) {
-  //   listItemHtml += `<li>${existingList[i]}</li>`
-  // }
-  // listContainer.innerHTML = listItemHtml;
-
-  // Populating list using forEach
-  // Does not return any value.
-  // Break / continue / Return(does not work with foreach)
-  // Can not stop this after starting
-  // let listItemHtml2 = "";
-  // existingList.forEach((task, index) => {
-  //   const sn = index + 1;
-  //   listItemHtml2 += `<li>${sn}) ${task}</li>`
-  // });
-  // listContainer.innerHTML = listItemHtml2;
-
-  // const existingListArrayHTML = existingList.map((item) => `<li>${item}</li>`); // Array to HTML Array Transformation
-
-  const existingListArrayHTML = existingList.map((item, index) => {
-    const Sn = index + 1;
-    return `<li>${Sn} ${item}</li>`;
-  }); // Array to HTML Array Transformation
-  
-  const existingListHTML = existingListArrayHTML.join(''); // Array to String conversion
+  // For / White / Do 
   const listContainer = document.getElementById("list-container");
   listContainer.innerHTML = existingListHTML;
 
-  // Completed
-  // Modification / Update
-  // Filter Options 
-  // Sorting ASC / DESC
-  // Delete
-  // Reset
-
-  // [{
-  //   id: 1,
-  //   task: "This is my first task",
-  //   description: "Description",
-  //   status: 'todo', // 'completed'
-  //   timestamp: '',
-  //   endDateTime: '',
-  // }]
-
-  //filter, find, findIndex, sort
+  // map, filter, find
 
 }
 
